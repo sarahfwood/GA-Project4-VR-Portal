@@ -11,3 +11,4 @@ class Headset(models.Model):
     controls = models.CharField(max_length=50)
     hardware_platform = models.CharField(max_length=50)
     software_platform = models.CharField(max_length=50)
+    description = models.CharField(max_length=300)
