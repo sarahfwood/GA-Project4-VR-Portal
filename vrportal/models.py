@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Headset(models.Model):
     name = models.CharField(max_length=50)
+    image = models.CharField(max_length=300, default='Insert Image')
     headset_type = models.CharField(max_length=50)
     connections = models.CharField(max_length=50)
     resolution = models.CharField(max_length=50)
@@ -12,3 +13,6 @@ class Headset(models.Model):
     hardware_platform = models.CharField(max_length=50)
     software_platform = models.CharField(max_length=50)
     description = models.CharField(max_length=300)
+
+    def __str__(self):
+        return f'{self.name}'
