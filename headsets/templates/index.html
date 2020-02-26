@@ -2,7 +2,9 @@
 
 {% for headset in headsets %}
 <div>
-  <img src="{{ headset.image }}" alt="{{ headset.name }}" />
-  <h3>{{ headset.name }}</h3>
+  <a href="/headsets/{{ headset.id }}/">
+    <img src="{{ headset.image }}" alt="{{ headset.title }}" />
+    <h3>{{ headset.name }}</h3>
+  </a>
 </div>
 {% endfor %}
