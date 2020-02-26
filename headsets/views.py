@@ -7,6 +7,6 @@ from .models import Headset
 class ListView(View):
 
     def get(self, request):
-        headsets = Headset.object.all()
+        headsets = Headset.objects.all()
 
         return render(request, 'index.html', {'headsets': headsets})
