@@ -13,3 +13,6 @@ class Headset(models.Model):
     hardware_platform = models.CharField(max_length=50)
     software_platform = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
+
+    def __str__(self):
+        return f'{self.name}'
