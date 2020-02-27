@@ -9,7 +9,7 @@ class ListView(APIView):
 
     def get(self, _request):
         headsets = Headset.objects.all()
-        serializer = HeadsetSerializer(Headsets, many=True)
+        serializer = HeadsetSerializer(headsets, many=True)
 
         return Response(serializer.data)
 
