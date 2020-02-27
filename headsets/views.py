@@ -1,20 +1,23 @@
-from django.shortcuts import render
-from django.views import View
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 from .models import Headset
+from .serializers import HeadsetSerializer
 
 # Create your views here.
-class ListView(View):
+class ListView(APIView):
 
-    def get(self, request):
+    def get(self, _request):
         headsets = Headset.objects.all()
+        serializer = HeadsetSerializer(Headsets, many=True)
 
-        return render(request, 'index.html', {'headsets': headsets})
+        return Response(serializer.data)
 
 
-class DetailView(View):
-  
-    def get(self, request, pk):
+class DetailView(APIView):
+
+    def get(self, _request, pk):
         headset = Headset.objects.get(pk=pk)
+        serializer = HeadsetSerializer(headset)
 
-        return render(request, 'show.html', {'headset': headset})
+        return Response(serializer.data)
