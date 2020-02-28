@@ -2,10 +2,10 @@ from django.db import models
 
 # Create your models here.
 class Type(models.Model):
-    headset_type = models.CharField(max_length=50)
+    model_type = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{self.headset_type}'
+        return f'{self.model_type}'
 
 class Headset(models.Model):
     name = models.CharField(max_length=50)
